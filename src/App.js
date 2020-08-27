@@ -1,24 +1,41 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import DisplayComponent from './component/DisplayContent';
+import BtnComponent from './component/BtnComponent';
 import './App.css';
 
 function App() {
+  const [time, setTime]=useState({s:0});
+  const [interv, setInterv] = useState();
+
+  var  updatedS =time.s;
+
+  const start = () => {
+    time.s=0;
+    updatedS =0;
+    clearInterval(interv);
+    run();
+    setInterv(setInterval(run,1000));
+  }
+
+ 
+
+  const run = ()=> {
+    updatedS++;
+    return setTime({ s:updatedS});
+  }
+  const stop = () => {
+    clearInterval(interv);
+   
+  };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main-section">
+    <div className="clock-holder">
+      <div className="stopwatch ">
+          <DisplayComponent time={time} />
+          <BtnComponent stop={stop} start={start}/>
+      </div>
+
+    </div>
     </div>
   );
 }

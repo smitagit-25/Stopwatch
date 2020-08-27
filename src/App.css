@@ -1,38 +1,65 @@
-.App {
+
+
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box; 
+}
+
+.main-section{
+  background: transparent;
+  max-width: 600px;
+  width: 90%;
+  height: 500px;
+  margin: 100px 350px;
+
+}
+
+.clock-holder{
+  width: 100%;
+  background: #000000;
+    border-radius: 50%;
+    width: 350px;
+    height: 350px;  
+  
+}
+.stopwatch{
+  padding: 60px 0px;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.stopwatch span{
+  color: #fff;
+  display: inline-block;
+  font-family: monospace;
+  font-size: 60px;
+  margin-top: 50px;
+  text-decoration-line: underline;
+
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.stopwatch .stopwatch-btn{
+  background: #fff;
+  margin-top: 70px;
+  margin-left: 5px;
+  border: none;
+  padding: 12px 20px;
+  font-size: 14px;
+  text-transform: uppercase;
+  width: 100px;
+  transition: background 1s;
+  cursor: pointer;
+}
+
+.stopwatch .stopwatch-btn-gre{
+  
+    background: #92c483;
+    border: 2px solid #92c483;
+    color: #fff;
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.stopwatch .stopwatch-btn-red{
+  background: #b43152;
+  border: 2px solid #b43152;
+  color: #fff;
 }
